@@ -5,12 +5,13 @@ import hello.member.dto.request.MemberRequest;
 import hello.member.dto.response.MemberResponse;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class MemberService {
 
-    List<Member> members;
+    List<Member> members = new ArrayList<>();
 
     public MemberResponse.createMemberResponseDto saveMember(
             MemberRequest.createMemberRequestDto request
