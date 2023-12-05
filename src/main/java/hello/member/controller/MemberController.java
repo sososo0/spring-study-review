@@ -13,7 +13,6 @@ public class MemberController {
             Model model
     ) {
         model.addAttribute("name", name);
-
         return "hello";
     }
 }
