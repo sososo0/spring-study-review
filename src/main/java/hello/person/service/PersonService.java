@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class PersonService {
 
     public PersonResponse.GetPersonResponse findPerson() {
-        Person person = new Person("brown", 20);
+        Person person = new Person("Brown", 20);
         return new PersonResponse.GetPersonResponse(person);
     }
 
