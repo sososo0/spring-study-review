@@ -9,13 +9,17 @@ public class Member {
     private int age;
 
     public Member(String name, int age) {
-        this.id = idCounter.incrementAndGet();
         this.name = name;
         this.age = age;
     }
 
     public Long getId() {
+        addId();
         return id;
+    }
+
+    private void addId() {
+        this.id = idCounter.incrementAndGet();
     }
 
     public String getName() {
