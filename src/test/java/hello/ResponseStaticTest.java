@@ -19,4 +19,14 @@ public class ResponseStaticTest {
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
     }
+
+    @Test
+    void responseStaticPage() {
+        var response = RestAssured
+                .given().log().all()
+                .when().get("/hello.html")
+                .then().log().all().extract();
+
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+    }
 }
