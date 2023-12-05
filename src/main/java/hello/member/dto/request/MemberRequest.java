@@ -8,11 +8,8 @@ public class MemberRequest {
             String name,
             int age
     ) {
-        public createMemberRequestDto(Member member) {
-            this(
-                    member.getName(),
-                    member.getAge()
-            );
+        public Member toEntity() {
+            return new Member(name, age);
         }
     }
 
