@@ -13,7 +13,7 @@ public class ResponseTemplatesTest {
     void responseTemplatesPage() {
         var response = RestAssured
                 .given().log().all()
-                .when().get("/template?name=Brie")
+                .when().get("/hello?name=Brie")
                 .then().log().all().extract();
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
