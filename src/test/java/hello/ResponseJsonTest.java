@@ -1,5 +1,6 @@
 package hello;
 
+import hello.person.domain.Person;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
