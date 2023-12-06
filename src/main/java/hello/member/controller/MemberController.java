@@ -38,7 +38,14 @@ public class MemberController {
     ) {
         MemberResponse.CreateMemberResponseDto response = memberService.saveMember(request);
         return ResponseEntity.status(HttpStatus.CREATED)
-                .location(URI.create("/members"+response.id()))
+                .location(URI.create("/members/"+response.id()))
                 .body(response);
     }
+
+    @GetMapping("/members")
+    public ResponseEntity<MemberResponse.GetMemberResponseDto> getMembers() {
+        MemberResponse.GetMemberResponseDto response = memberService.readMembers();
+        return ResponseEntity.ok(response);
+    }
+
 }

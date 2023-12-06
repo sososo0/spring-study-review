@@ -36,6 +36,6 @@ public class CRUDTest {
                 .then().log().all().extract();
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
-        assertThat(response.jsonPath().getList("", Member.class)).hasSize(1);
+        assertThat(response.jsonPath().getList("members", Member.class)).hasSize(1);
     }
 }

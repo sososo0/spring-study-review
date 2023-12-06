@@ -27,4 +27,8 @@ public class MemberService {
         return member;
     }
 
+    public MemberResponse.GetMemberResponseDto readMembers() {
+        return MemberResponse.GetMemberResponseDto.of(members);
+    }
+
 }
