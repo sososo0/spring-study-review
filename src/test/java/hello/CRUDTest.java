@@ -24,4 +24,18 @@ public class CRUDTest {
 
         assertThat(response.statusCode()).isEqualTo(HttpStatus.CREATED.value());
     }
+
+    @Test
+    void read() {
+        create();
+
+        var response = RestAssured
+                .given().log().all()
+                .contentType(ContentType.JSON)
+                .when().get("/members")
+                .then().log().all().extract();
+
+        assertThat(response.statusCode()).isEqualTo(HttpStatus.OK.value());
+        assertThat(response.jsonPath().getList("", Member.class)).hasSize(1);
+    }
 }
