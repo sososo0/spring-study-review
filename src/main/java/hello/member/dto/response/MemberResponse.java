@@ -7,12 +7,12 @@ import java.util.stream.Collectors;
 
 public class MemberResponse {
 
-    public record createMemberResponseDto(
+    public record CreateMemberResponseDto(
             Long id,
             String name,
             int age
     ) {
-        public createMemberResponseDto(Member member) {
+        public CreateMemberResponseDto(Member member) {
             this(
                     member.getId(),
                     member.getName(),

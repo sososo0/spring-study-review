@@ -13,14 +13,14 @@ public class MemberService {
 
     List<Member> members = new ArrayList<>();
 
-    public MemberResponse.createMemberResponseDto saveMember(
-            MemberRequest.createMemberRequestDto request
+    public MemberResponse.CreateMemberResponseDto saveMember(
+            MemberRequest.CreateMemberRequestDto request
     ) {
-        return new MemberResponse.createMemberResponseDto(addMember(request));
+        return new MemberResponse.CreateMemberResponseDto(addMember(request));
     }
 
     private Member addMember(
-            MemberRequest.createMemberRequestDto request
+            MemberRequest.CreateMemberRequestDto request
     ) {
         Member member = request.toEntity();
         members.add(member);

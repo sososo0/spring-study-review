@@ -32,11 +32,11 @@ public class MemberController {
     }
 
     @PostMapping("/members")
-    public ResponseEntity<MemberResponse.createMemberResponseDto> createMember(
-            @RequestBody MemberRequest.createMemberRequestDto request,
+    public ResponseEntity<MemberResponse.CreateMemberResponseDto> createMember(
+            @RequestBody MemberRequest.CreateMemberRequestDto request,
             Errors errors
     ) {
-        MemberResponse.createMemberResponseDto response = memberService.saveMember(request);
+        MemberResponse.CreateMemberResponseDto response = memberService.saveMember(request);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .location(URI.create("/members"+response.id()))
                 .body(response);

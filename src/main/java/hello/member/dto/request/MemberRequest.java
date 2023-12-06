@@ -4,7 +4,7 @@ import hello.member.domain.Member;
 
 public class MemberRequest {
 
-    public record createMemberRequestDto(
+    public record CreateMemberRequestDto(
             String name,
             int age
     ) {
